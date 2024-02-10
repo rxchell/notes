@@ -3,11 +3,11 @@ git add -A
 
 git commit 
 
-git push
-
 write commit message 
 
 :wq! 
+
+git push
 
 
 # syncing current branch to main branch
