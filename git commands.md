@@ -5,6 +5,10 @@ git commit
 
 git push
 
+write commit message 
+
+:wq! 
+
 
 # syncing current branch to main branch
 
