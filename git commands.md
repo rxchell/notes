@@ -33,3 +33,9 @@ git fetch origin
 git merge origin/main
 
 git push origin your_branch_name
+
+# Pull from main branch dev in Github to branch in VS Code
+
+git config pull.rebase false
+
+git pull origin dev
