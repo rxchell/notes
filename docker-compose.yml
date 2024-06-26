@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  server:
+    image: keeganchua0705/backend-server:latest
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/aquashield_db
+    depends_on:
+      - mongo
+
+  ingest:
+    image: keeganchua0705/backend-ingest:latest
+    command: python DataProcessor/ingest_bulk.py data/Pond_data_BangKa
+    volumes:
+      - ./data/Pond_data_BangKa:/app/data/Pond_data_BangKa
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/aquashield_db
+    depends_on:
+      - mongo
+
+  sensor:
+    image: keeganchua0705/backend-sensor:latest
+    command: python datastream/generate_and_store_data.py
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/aquashield_db
+      - PYTHONPATH=/app
+      - DJANGO_SETTINGS_MODULE=core.settings
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo:/data/db
+
+volumes:
+  mongo:
