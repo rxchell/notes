@@ -1,0 +1,7 @@
+include .env.production file 
+`npm run build` in the same directory as src 
+build folder created
+compress build folder
+namecheap >> hosting list >> cPanel >> file manager >> public_html folder >> upload compressed build folder >> extract build folder >> move contents of build folder into public_html folder
+include .htaccess file in public_html folder
+site deployed 
