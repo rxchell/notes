@@ -1,4 +1,4 @@
-- include .env.production file
+- include .env.production file in the same directory as src
 - `npm run build` in the same directory as src
 - build folder created
 - compress build folder
