@@ -10,6 +10,7 @@ write commit message
 git push
 
 
+
 # syncing current branch to main branch
 
 git fetch origin
