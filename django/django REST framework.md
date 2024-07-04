@@ -91,7 +91,7 @@ http://localhost:8000/api/fetch-prediction-pond-data/
 
 
 ```
-MAKE THE PREDICTION AND WEBSOCKET CORRECTLY RETURN 2 GRAPHS
+MAKE THE fetchHistoricalPredictedPondData AND WEBSOCKET CORRECTLY RETURN 2 GRAPHS
 ecoli graph:
 G2 E_coli_concentration
 G2 actual_E_coli_concentration
@@ -199,6 +199,6 @@ and the response for prediction:
 
 
 
-COMBINE THE DATA FROM THE LAST 30 MINUTES(fetchPredictedPondData AND THE REALTIME (WEBSOCKET) into the same line
+COMBINE THE DATA FROM THE LAST 30 MINUTES(fetchHistoricalPredictedPondData is 30 minutes before real time) AND THE REALTIME (WEBSOCKET) into the same line
 ```
 
