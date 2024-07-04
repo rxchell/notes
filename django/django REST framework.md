@@ -1,4 +1,6 @@
-## Fetch data from backend api
+# Fetch data from backend api
+
+## Eg 1 fetch physical pond data 
 
 http://localhost:8000/api/fetch-physical-pond-data/
 
@@ -42,3 +44,48 @@ http://localhost:8000/api/fetch-physical-pond-data/
     ]
 }
 ```
+
+<br></br>
+
+## Eg 2 fetch prediction pond data 
+- for error handling for fetching data:
+- if data is fetched successful, the status: 'success',
+- otherwise, there will be no status at all> then can display fail to fetch
+
+http://localhost:8000/api/fetch-prediction-pond-data/
+
+<img width="1164" alt="Screenshot 2024-07-04 at 11 41 56" src="https://github.com/rxchell/notes/assets/133939424/c795e2a9-4eae-48e0-8eff-4a2dc351a144">
+
+</br></br>
+
+### Input
+
+```
+{
+    "pondType": "G2",
+    "pathogenType": "Ecoli",
+    "startDate": "27-06-2024 07:50",
+    "endDate": "27-06-2024 07:55"
+}
+```
+
+</br>
+
+### Response
+```
+{
+    "status": "success",
+    "data": [
+        {
+            "timestamp": "04-07-2024 03:12:52",
+            "temperature": 29.02,
+            "pH": 7.38,
+            "salinity": 21.55,
+            "DO": 5.69,
+            "predicted_E_coli_concentration": 2.6327580783018236,
+            "actual_E_coli_concentration": 2.76617811
+        }
+    ]
+}
+```
+
