@@ -18,6 +18,13 @@ export interface HistoricalPhysicalData {
     endDate: string;
 }
 
+export interface HistoricalPredictedPhysicalData {
+    pondType: string;
+    pathogenType: string;
+    startDate: string;
+    endDate: string;
+}
+
 class DataClient {
     async createComponent(params: ComponentParams, componentId: string, userEmail: string): Promise<{ status?: string }> {
         try {
@@ -72,7 +79,7 @@ class DataClient {
         }
     }
 
-    async fetchPredictedPondData(params: HistoricalPhysicalData): Promise<{ status?: string; data?: ForecastPondData }> {
+    async fetchPredictedPondData(params: HistoricalPredictedPhysicalData): Promise<{ status?: string; data?: ForecastPondData }> {
         try {
             console.log('Fetching predicted pond data:', params);
             const response = await Api.request('/api/fetch-prediction-pond-data/', {
