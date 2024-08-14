@@ -1,8 +1,6 @@
-<img width="1080" alt="Screenshot 2024-08-14 at 13 19 20" src="https://github.com/user-attachments/assets/3c081967-f036-4ab6-8b83-37081d92c07e">For a 3D (or 2D, if we ignore the blue slice at the back which contains the values 2, 4, 6 and 8), the axes are defined as shown in figure below.
+For a 3D (or 2D, if we ignore the blue slice at the back which contains the values 2, 4, 6 and 8), the axes are defined as shown in figure below.
 
-<img width="1075" alt="Screenshot 2024-08-14 at 13 18 39" src="https://github.com/user-attachments/assets/38c1fd05-2ca7-4878-b202-7b419c87cbc9">
-
-<img width="1087" alt="Screenshot 2024-08-14 at 13 19 57" src="https://github.com/user-attachments/assets/89b6c87d-e555-417b-904d-f09a3db7be55">
+<img width="675" alt="Screenshot 2024-08-14 at 13 18 39" src="https://github.com/user-attachments/assets/38c1fd05-2ca7-4878-b202-7b419c87cbc9">
 
 ```python
 import numpy as np
