@@ -23,3 +23,12 @@ print(np.sum([[0, 1], [0, 5]]))         # 6
 print(np.sum([[0, 1], [0, 5]], axis=0)) # array([0, 6])
 print(np.sum([[0, 1], [0, 5]], axis=1)) # array([1, 5])
 ```
+
+#
+
+```python
+a = np.array([[1, 2], [3, 4]])
+print(np.mean(a))         # 2.5
+print(np.mean(a, axis=0)) # array([2., 3.])
+print(np.mean(a, axis=1)) # array([1.5, 3.5])
+```
