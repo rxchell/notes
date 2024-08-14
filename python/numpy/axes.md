@@ -13,3 +13,13 @@ print(np.sum(a, axis=1))      # Prints [[ 4,  6],
 print(np.sum(a, axis=2))      # Prints [[ 3,  7],
                               #         [11, 15]]
 ```
+
+```python
+import numpy as np
+
+print(np.sum([]))                       # 0.0
+print(np.sum([0.5, 1.5]))               # 2.0
+print(np.sum([[0, 1], [0, 5]]))         # 6
+print(np.sum([[0, 1], [0, 5]], axis=0)) # array([0, 6])
+print(np.sum([[0, 1], [0, 5]], axis=1)) # array([1, 5])
+```
