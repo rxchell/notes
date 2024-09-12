@@ -1,0 +1,56 @@
+@startuml
+skinparam monochrome true
+skinparam defaultFontName Courier
+
+package "Spectrometer" {
+  [Detector(s) measurement] as Detector
+  [Motor]
+}
+
+package "Single-Board Computer" {
+  package "Data Processing" {
+    [Define sampling rate, start, stop]
+    [Consolidate raw measurement data]
+    [Data Processing (recovery algorithm)]
+    [Machine learning algorithms]
+    [Store data]
+  }
+  
+  package "Motor Control" {
+    [Control motor speed, step size, start & end position]
+    [Read motor position]
+  }
+}
+
+package "Cloud Database" {
+  [Store raw and recovered data]
+}
+
+package "PC" {
+  [Display (dashboard)]
+  [Store data]
+}
+
+Detector -[hidden]-> "Single-Board Computer"
+Motor -[hidden]-> "Single-Board Computer"
+
+Detector --> [Consolidate raw measurement data] : BNC
+Motor --> [Control motor speed, step size, start & end position] : USB
+
+[Define sampling rate, start, stop] --> [Consolidate raw measurement data]
+[Consolidate raw measurement data] --> [Data Processing (recovery algorithm)]
+[Data Processing (recovery algorithm)] --> [Machine learning algorithms]
+[Data Processing (recovery algorithm)] --> [Store data]
+[Store data] --> [Store raw and recovered data]
+
+[Machine learning algorithms] --> [Store data]
+[Machine learning algorithms] --> [Chemometric analysis, insights, etc.]
+
+[Control motor speed, step size, start & end position] --> [Read motor position]
+[Read motor position] --> [Motor Position Data]
+
+[Store raw and recovered data] --> [Display (dashboard)]
+[Store raw and recovered data] --> [Store data]
+
+[Display (dashboard)] --> [Store data]
+@enduml
