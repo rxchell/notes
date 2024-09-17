@@ -1,0 +1,57 @@
+@startuml
+package "Spectrometer" {
+  [Detector(s)]
+  [Motor]
+}
+
+package "Spotics Dashboard" {
+  package "Device Control Panel" {
+    [Integration Time]
+    [No. of Scans]
+    [Total Sampling Time]
+    [Step/Sweep Mode]
+    [Step Size]
+    [Scan Time]
+    [Start/Stop/Restart Measurement]
+  }
+
+  package "Backend" {
+    [Django Backend]
+    [Detector Measurements]
+    [Motor Position Readings]
+    [Recovery Algorithm (C++/Python)]
+    [Recovered Spectrum]
+    [MongoDB Storage] 
+  }
+
+  package "Data Visualization" {
+    [Recovered Spectrum]
+    [Plot Spectrum]
+  }
+
+  package "Advanced Analytics" {
+    [Machine Learning Algorithms]
+    [Advanced Plots (e.g., Clusters)]
+    [Plot Graphs]
+  }
+
+  package "Data Storage" {
+    [Recovered Spectrum]
+    [Detector Measurements]
+    [Motor Position Readings]
+  }
+
+  package "Cloud Storage" {
+    [Recovered Spectrum]
+    [Detector Measurements]
+    [Motor Position Readings]
+  }
+}
+
+[Motor] --> [Backend] : Sends position data
+[Detector(s)] --> [Backend] : Sends spectral data
+[Backend] --> [MongoDB Storage] : Stores data
+[Backend] --> [Data Visualization] : Sends data for visualization
+[Data Visualization] --> [Advanced Analytics] : Processed further
+[Advanced Analytics] --> [Plot Graphs] : Results shown
+@enduml
