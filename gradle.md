@@ -9,3 +9,6 @@
 ```
 ./gradlew build
 ```
+```
+./gradlew check
+```
