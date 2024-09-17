@@ -5,3 +5,7 @@
 ```
 ./gradlew checkstyleMain checkstyleTest
 ```
+
+```
+./gradlew build
+```
