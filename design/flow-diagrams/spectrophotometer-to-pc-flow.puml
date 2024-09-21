@@ -1,0 +1,18 @@
+@startuml
+start
+ 
+while (Spectrophotometer connected to PC?) is (yes)
+:Detector in Spectrophotometer sends data through BNC;
+:LabVIEW Code in PC receives data;
+    if (new data received?) then (yes)
+        :Read raw measurement data;
+        :Convert data to .Ivm file;
+        :MATLAB reads .Ivm file;
+        :Process data;
+        :Update plots on Data Visualisation page;
+    endif
+endwhile (no)
+ 
+:Stop all processes;
+stop
+@enduml

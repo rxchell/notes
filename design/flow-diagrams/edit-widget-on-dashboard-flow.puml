@@ -1,0 +1,26 @@
+@startuml
+start
+:Access Dashboard;
+
+if (User click on Edit button?) then (yes)
+    :Open Widget Menu;
+    if (Select Widget?) then (yes)
+        :Open popup for widget configuration;
+        :Click on a configuration;
+        :Dashboard displays the configuration;
+    else (no)
+    endif
+else (no)
+endif
+
+if (User right click on a widget?) then (yes)
+    :Open Menu;
+    if (User clicks on Edit or Delete widget button) then (yes)
+        :Edit / Delete widget;
+    else (no)
+    endif
+else (no)
+endif
+
+stop
+@enduml
