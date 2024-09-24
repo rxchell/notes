@@ -1,6 +1,6 @@
 # Client-side and server side 
--**Client side**: As light as possible to make it efficient. 
--**Server side**: Does all the calculations and data processing so that data is ready to be received by the frontend
+- **Client side**: As light as possible to make it efficient. 
+- **Server side**: Does all the calculations and data processing so that data is ready to be received by the frontend
 
 # Diagrams 
 - Wireframe
