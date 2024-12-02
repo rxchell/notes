@@ -15,3 +15,5 @@ Data structure
     ]
 }
 ```
+
+- I would like to get data starting from a specific date and its start time, and ending at a date and its end time.
