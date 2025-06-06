@@ -1,13 +1,10 @@
 # Push from current branch
-
 1. Add the files to staging
      - Add specfic file: `git add <file path>`
      - Add all files: `git add .`
-
 2. Commit the files
      - `git commit -m <commit message`
      - `git commit`, write commit message, `:wq!`
-  
 3. Push the commit 
      - `git push`
 
