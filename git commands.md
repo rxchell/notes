@@ -1,45 +1,38 @@
-# push from current branch
-git add -A
+# Push from current branch
 
-git commit 
+1. Add the files to staging
+     - Add specfic file: `git add <file path>`
+     - Add all files: `git add .`
 
-write commit message 
+2. Commit the files
+     - `git commit -m <commit message`
+     - `git commit`, write commit message, `:wq!`
+  
+3. Push the commit 
+     - `git push`
 
-:wq! 
 
-git push
+# Sync current branch to main branch
 
+1. `git fetch origin`
+2. `git checkout main`
+3. `git merge <current_branch>`
+4. `git add .`
+5. `git commit -m “merging “current_branch” branch into main”`
+6. `git push origin main`
 
+# Sync main branch to current branch
 
-# syncing current branch to main branch
-
-git fetch origin
-
-git checkout main
-
-git merge your_branch
-
-git add .
-
-git commit -m “merging “your_branch” branch into main”
-
-git push origin main
-
-# Syncing main branch to current branch
-
-git checkout your_branch_name
-
-git fetch origin
-
-git merge origin/main
-
-git push origin your_branch_name
+1. `git checkout <current_branch>`
+2. `git fetch origin`
+3. `git merge origin/main`
+4. `git push origin <current_branch>`
 
 # Pull from main in Github to current branch
-git pull origin main
+1. `git pull origin main`
 
-# Pull from main branch dev in Github to branch in VS Code
+# Pull from main branch dev in Github (remote) to branch in VS Code (local)
+1. `git config pull.rebase false`
+2. `git pull origin dev`
 
-git config pull.rebase false
 
-git pull origin dev
